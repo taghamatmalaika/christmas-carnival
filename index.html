@@ -40,7 +40,7 @@
   .closed .ic{font-size:44px;line-height:1}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
   .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 10px}
-  .grid3 label.q{font-size:13.5px}
+  label.q small{font-weight:400;color:var(--muted);font-size:12.5px}
   /* disabilities */
   .dis{border:1.5px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden;transition:border-color .15s,background .15s}
   .dis.on{border-color:var(--green);background:#f1f8f4}
@@ -90,10 +90,12 @@
 
     <div class="card">
       <h2>الأعداد والمواصلات</h2>
-      <div class="grid3">
+      <p class="hint">لو مفيش، اكتب 0</p>
+      <div class="grid2">
         <div class="field"><label class="q">عدد الخدام <span class="req">*</span></label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="servants" required><div class="err">مطلوب</div></div>
-        <div class="field"><label class="q">سيارات ملاكي <span class="req">*</span></label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="cars" required><div class="err">مطلوب</div></div>
-        <div class="field"><label class="q">عدد الباصات <span class="req">*</span></label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="buses" required><div class="err">مطلوب</div></div>
+        <div class="field"><label class="q">عدد السيارات الملاكي <span class="req">*</span></label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="cars" required><div class="err">مطلوب</div></div>
+        <div class="field"><label class="q">باص كبير <small>(50 كرسي)</small> <span class="req">*</span></label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="bigBus" required><div class="err">مطلوب</div></div>
+        <div class="field"><label class="q">باص صغير <small>(28 كرسي)</small> <span class="req">*</span></label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="smallBus" required><div class="err">مطلوب</div></div>
       </div>
     </div>
 
