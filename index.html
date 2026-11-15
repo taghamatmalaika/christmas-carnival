@@ -147,7 +147,7 @@
 
 <script>
 const API='https://script.google.com/macros/s/AKfycbzuUcLE9ISt7Clx5iw1sCpr_uqr2erOVO6I7SJ5ojUqabet9gnYIg6ehZEKL20s1Fu8/exec';
-const CLOSE_AT=new Date('2026-11-22T23:59:00+02:00');
+const CLOSE_AT=new Date('2026-11-25T23:59:00+02:00');
 function showClosed(){ const f=document.getElementById('f'); if(f) f.style.display='none'; document.getElementById('done').style.display='none'; document.getElementById('closed').style.display='block'; }
 if(new Date()>CLOSE_AT) showClosed();
 fetch(API+'?status=1',{credentials:'omit'}).then(r=>r.json()).then(r=>{ if(r.closed) showClosed(); }).catch(()=>{});
