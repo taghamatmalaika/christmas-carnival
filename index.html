@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="بيانات الكنائس لخدمة كرنفال الكريسماس">
+<meta property="og:description" content="طغمات الملائكة - كرنفال الكريسماس">
+<title>بيانات الكنائس لخدمة كرنفال الكريسماس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#c8102e; --red-dark:#9b0c23; --green:#1f6f4a; --gold:#e3b04b;
+    --bg:#f6f1ea; --card:#fff; --ink:#1e1e1e; --muted:#6b6b6b; --line:#e4ddd3;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);font-family:"Cairo",sans-serif;color:var(--ink);line-height:1.6}
+  .wrap{max-width:640px;margin:0 auto;padding:16px 14px 40px}
+  .hero{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border-radius:18px;padding:26px 22px 22px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:auto -40px -60px auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(227,176,75,.35),transparent 70%)}
+  .hero{text-align:center}
+  .hero .logo{height:88px;margin:0 auto 14px;overflow:hidden;position:relative;z-index:1;display:flex;justify-content:center}
+  .hero .logo img{height:197px;width:auto;margin-top:-55px;opacity:0;transition:opacity .3s}
+  .hero .logo img.on{opacity:1}
+  .hero .tag{display:inline-block;background:rgba(255,255,255,.18);padding:2px 12px;border-radius:99px;font-size:13px;margin-bottom:8px}
+  .hero h1{margin:0;font-size:24px;font-weight:700;line-height:1.4}
+  .hero p{margin:6px 0 0;font-size:14px;opacity:.9}
+  .card{background:var(--card);border-radius:16px;padding:18px 18px 6px;margin-top:14px;border:1px solid var(--line)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:700;color:var(--red-dark)}
+  .card .hint{margin:0 0 12px;font-size:13px;color:var(--muted)}
+  .field{margin-bottom:16px}
+  label.q{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+  label.q .req{color:var(--red)}
+  input[type=text],input[type=tel]{width:100%;font:inherit;font-size:16px;padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fcfaf7;outline:none;transition:border-color .15s}
+  input:focus{border-color:var(--red);background:#fff}
+  input.num{direction:ltr;text-align:right}
+  .warn{color:var(--red);font-size:12.5px;margin-top:4px;display:none}
+  .warn.show{display:block}
+  .closed{text-align:center;padding:36px 20px}
+  .closed .ic{font-size:44px;line-height:1}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 10px}
+  .grid3 label.q{font-size:13.5px}
+  /* disabilities */
+  .dis{border:1.5px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden;transition:border-color .15s,background .15s}
+  .dis.on{border-color:var(--green);background:#f1f8f4}
+  .dis .head{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;user-select:none}
+  .dis input[type=checkbox]{display:none}
+  .box{width:24px;height:24px;border-radius:7px;border:2px solid #bdb5aa;display:grid;place-items:center;flex:none;transition:all .15s}
+  .dis.on .box{background:var(--green);border-color:var(--green)}
+  .box svg{width:14px;height:14px;opacity:0}
+  .dis.on .box svg{opacity:1}
+  .dis .name{font-weight:600;font-size:15.5px}
+  .dis .count{margin:0;max-height:0;overflow:hidden;transition:max-height .25s ease,padding .25s ease;padding:0 14px}
+  .dis.on .count{max-height:110px;padding:0 14px 14px}
+  .dis .count label{display:block;font-size:13px;color:var(--green);font-weight:600;margin-bottom:4px}
+  .none{font-size:13px;color:var(--muted);margin:2px 0 14px}
+  button{width:100%;margin-top:16px;font:inherit;font-weight:700;font-size:17px;color:#fff;background:var(--red);border:0;border-radius:14px;padding:14px;cursor:pointer;box-shadow:0 6px 16px rgba(200,16,46,.25)}
+  button:active{transform:translateY(1px)}
+  .err{color:var(--red);font-size:12.5px;margin-top:4px;display:none}
+  .field.bad .err{display:block}
+  .field.bad input{border-color:var(--red)}
+  .done{display:none;text-align:center;padding:40px 20px}
+  .done .ok{width:64px;height:64px;border-radius:50%;background:var(--green);display:grid;place-items:center;margin:0 auto 12px}
+  footer{text-align:center;font-size:12px;color:var(--muted);margin-top:22px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="logo"><img id="logo" alt="طغمات الملائكة"></div>
+    <span class="tag">🎄 كرنفال الكريسماس</span>
+    <h1>بيانات الكنائس لخدمة كرنفال الكريسماس</h1>
+    <p>من فضلك املا البيانات دي عشان نقدر نجهز لكم كويس</p>
+  </div>
+
+  <div class="card closed" id="closed" style="display:none"><div class="ic">🔒</div><h2>التسجيل اتقفل</h2><p class="hint">ميعاد التسجيل خلص يوم السبت 22 نوفمبر الساعة 11:59 بالليل. شكراً ليكم 🎄</p></div>
+  <form id="f" novalidate>
+    <div class="card">
+      <h2>بيانات الكنيسة</h2>
+      <p class="hint">كل الخانات اللي عليها <span style="color:var(--red)">*</span> مطلوبة</p>
+      <div class="field"><label class="q">اسم الكنيسة <span class="req">*</span></label><input type="text" name="church" required><div class="err">مطلوب</div></div>
+      <div class="grid2">
+        <div class="field"><label class="q">اسم المنطقة <span class="req">*</span></label><input type="text" name="area" required><div class="err">مطلوب</div></div>
+        <div class="field"><label class="q">المحافظة <span class="req">*</span></label><input type="text" name="gov" required><div class="err">مطلوب</div></div>
+      </div>
+      <div class="field"><label class="q">اسم أمين الخدمة <span class="req">*</span></label><input type="text" name="leader" required><div class="err">مطلوب</div></div>
+      <div class="field"><label class="q">رقم موبايل أمين الخدمة <span class="req">*</span></label><input type="tel" name="phone" inputmode="numeric" class="num" maxlength="11" dir="ltr" style="text-align:right" required><div class="err">اكتب رقم موبايل صحيح</div></div>
+    </div>
+
+    <div class="card">
+      <h2>الأعداد والمواصلات</h2>
+      <div class="grid3">
+        <div class="field"><label class="q">عدد الخدام <span class="req">*</span></label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="servants" required><div class="err">مطلوب</div></div>
+        <div class="field"><label class="q">سيارات ملاكي <span class="req">*</span></label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="cars" required><div class="err">مطلوب</div></div>
+        <div class="field"><label class="q">عدد الباصات <span class="req">*</span></label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="buses" required><div class="err">مطلوب</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>أطفال من ذوي الإعاقة</h2>
+      <p class="hint">علّم على نوع الإعاقة الموجود عندكم واكتب العدد. اللي مش موجود سيبه.</p>
+      <div class="dis" data-key="motor"><div class="head"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="name">إعاقة حركية</span></div><div class="count field"><label>العدد</label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="motor" placeholder="اكتب العدد هنا"><div class="err">اكتب العدد</div></div></div>
+      <div class="dis" data-key="mental"><div class="head"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="name">إعاقة ذهنية</span></div><div class="count field"><label>العدد</label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="mental" placeholder="اكتب العدد هنا"><div class="err">اكتب العدد</div></div></div>
+      <div class="dis" data-key="visual"><div class="head"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="name">إعاقة بصرية</span></div><div class="count field"><label>العدد</label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="visual" placeholder="اكتب العدد هنا"><div class="err">اكتب العدد</div></div></div>
+      <div class="dis" data-key="hearing"><div class="head"><input type="checkbox"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="name">إعاقة سمعية</span></div><div class="count field"><label>العدد</label><input type="text" inputmode="numeric" class="num" maxlength="5" dir="ltr" name="hearing" placeholder="اكتب العدد هنا"><div class="err">اكتب العدد</div></div></div>
+      <p class="none">لو مفيش أي حالات، سيبهم كلهم من غير علامة.</p>
+    </div>
+
+    <button type="submit" id="send">إرسال البيانات</button>
+  </form>
+
+  <div class="done card" id="done">
+    <div class="ok"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h2 style="color:var(--green)">تم الإرسال، شكراً ليكم 🎄</h2>
+    <p class="hint">بياناتكم وصلت.</p>
+  </div>
+</div>
+
+<script>
+const API='https://script.google.com/macros/s/AKfycbzuUcLE9ISt7Clx5iw1sCpr_uqr2erOVO6I7SJ5ojUqabet9gnYIg6ehZEKL20s1Fu8/exec';
+const CLOSE_AT=new Date('2026-11-22T23:59:00+02:00');
+function showClosed(){ const f=document.getElementById('f'); if(f) f.style.display='none'; document.getElementById('done').style.display='none'; document.getElementById('closed').style.display='block'; }
+if(new Date()>CLOSE_AT) showClosed();
+fetch(API+'?status=1',{credentials:'omit'}).then(r=>r.json()).then(r=>{ if(r.closed) showClosed(); }).catch(()=>{});
+fetch(API+'?logo=1',{credentials:'omit'}).then(r=>r.json()).then(r=>{ const im=document.getElementById('logo'); im.onload=()=>im.classList.add('on'); im.src='data:image/png;base64,'+r.data; }).catch(()=>{});
+document.querySelectorAll('input.num').forEach(i=>{
+  const w=document.createElement('div'); w.className='warn'; w.textContent='أرقام إنجليزي بس (0-9)';
+  i.insertAdjacentElement('afterend',w); let t;
+  i.addEventListener('input',()=>{
+    const clean=i.value.replace(/[^0-9]/g,'');
+    if(clean!==i.value){ i.value=clean; w.classList.add('show'); clearTimeout(t); t=setTimeout(()=>w.classList.remove('show'),3000); }
+  });
+});
+document.querySelectorAll('.dis').forEach(d=>{
+  const cb=d.querySelector('input[type=checkbox]'), num=d.querySelector('.count input');
+  d.querySelector('.head').addEventListener('click',()=>{
+    cb.checked=!cb.checked; d.classList.toggle('on',cb.checked);
+    if(cb.checked){ setTimeout(()=>num.focus(),200); } else { num.value=''; d.querySelector('.count').classList.remove('bad'); }
+  });
+});
+const F=document.getElementById('f');
+if(F) F.addEventListener('submit',e=>{
+  e.preventDefault();
+  let ok=true;
+  document.querySelectorAll('[required]').forEach(i=>{
+    const v=i.value.trim();
+    const bad=!v || !/^[0-9]+$/.test(v) && i.classList.contains('num') || (i.name==='phone' && !/^01[0125][0-9]{8}$/.test(v));
+    i.closest('.field').classList.toggle('bad',bad); if(bad) ok=false;
+  });
+  const data={};
+  new FormData(e.target).forEach((v,k)=>data[k]=v);
+  document.querySelectorAll('.dis').forEach(d=>{
+    const on=d.classList.contains('on'), num=d.querySelector('.count input'), f=d.querySelector('.count');
+    const bad=on && !(/^[0-9]+$/.test(num.value) && +num.value>0); f.classList.toggle('bad',bad); if(bad) ok=false;
+    data[d.dataset.key]=on?num.value:0;
+  });
+  if(!ok){ document.querySelector('.bad')?.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+  const btn=document.getElementById('send'); btn.disabled=true; btn.textContent='جاري الإرسال...';
+  const finish=()=>{ e.target.style.display='none'; document.getElementById('done').style.display='block'; scrollTo(0,0); };
+  fetch(API,{method:'POST',credentials:'omit',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)})
+    .then(r=>r.json())
+    .then(r=>{ if(r.ok) return finish(); if(r.error==='CLOSED') return showClosed(); throw new Error(r.error); })
+    .catch(()=>{ btn.disabled=false; btn.textContent='إرسال البيانات'; alert('حصلت مشكلة في الإرسال، اتأكد من النت وجرب تاني'); });
+});
+</script>
+</body>
+</html>
